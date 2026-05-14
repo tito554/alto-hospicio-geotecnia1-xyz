@@ -89,6 +89,57 @@ header.hero, .hero { position: relative !important; }
 .leaflet-control { z-index: 800 !important; }
 .leaflet-container { z-index: 1 !important; }
 </style>
+<style id="inline-link-style">
+p a[href^="/"]:not(.cta-btn):not(.hero-cta){color:var(--accent,#1E3A8A) !important;text-decoration:underline !important;text-decoration-color:rgba(29,78,216,.45);text-underline-offset:2px;font-weight:600}
+p a[href^="/"]:not(.cta-btn):not(.hero-cta):hover{text-decoration-color:currentColor;opacity:.85}
+</style>
+<style id="navbar-compact-fix">
+/* Compactar navbar para que el menú entre completo */
+.navbar{padding:.65rem 1rem !important}
+.navbar .nav{gap:.55rem !important}
+.nav-item{font-size:.74rem !important;letter-spacing:.01em !important}
+.nav-item.has-dd .nav-cat-link{padding:.4rem .25rem !important}
+.nav-item.has-dd .nav-arrow{font-size:.7rem !important;margin-left:.15rem !important}
+.cta-btn{padding:.45rem .8rem !important;font-size:.72rem !important;letter-spacing:.03em !important}
+.logo-box,.brand-name,.brand{font-size:.82rem !important}
+.logo-text .main{font-size:.95rem !important}
+.logo-text .sub{font-size:.72rem !important}
+/* Para layouts aberdeen/classic con clase distinta */
+header nav a,.menu a{font-size:.78rem !important}
+@media (max-width:1100px){
+  .nav-item{font-size:.7rem !important}
+  .navbar .nav{gap:.4rem !important}
+  .cta-btn{padding:.4rem .65rem !important;font-size:.68rem !important}
+}
+</style>
+<style id="layout-defensive">
+body{overflow-x:clip;max-width:100vw}
+body>*{max-width:100vw}
+@media (min-width:901px){
+  aside{position:relative}
+  aside+main,aside~main,aside~div>main{margin-left:0}
+  .content-area{display:flex;gap:1rem}
+}
+@media (max-width:900px){
+  aside{width:100% !important;position:static !important;height:auto !important}
+  .navbar{flex-wrap:wrap}
+}
+</style>
+<style id="navbar-fixed-override">
+nav.navbar,.header-top,.main-header{position:fixed !important;top:0 !important;left:0 !important;right:0 !important;z-index:1010 !important}
+body{padding-top:60px}
+.hero,.hero-inner,header.hero{padding-top:1rem !important}
+@media (max-width:900px){body{padding-top:90px}}
+</style>
+<style id="sidebar-hover-fix-v2">
+/* Adaptativo: hover preserva color heredado (white en dark sidebar, dark en light) */
+aside .cat-name:hover,aside .sb-home:hover,aside .cat-sub-wrap a:hover,
+aside nav a:hover{color:inherit !important;text-decoration:underline !important;text-underline-offset:3px}
+aside .cat-name,aside .sb-home,aside nav a{color:inherit}
+/* Bg sutil que funciona en cualquier fondo */
+aside .cat-name:hover,aside .sb-home:hover{background:rgba(127,127,127,.12) !important}
+aside .cat-sub-wrap a:hover{background:rgba(127,127,127,.08) !important}
+</style>
 </head><body>
 
 <nav class="navbar">
@@ -149,7 +200,7 @@ header.hero, .hero { position: relative !important; }
 <hr style="border:none;height:2px;background:linear-gradient(90deg,transparent,#A16207,transparent);margin:2rem 0;width:60%;margin-left:auto;margin-right:auto">
 <p>NCh2745.Of2013 - Análisis y diseño de edificios con aislación sísmica, NCh433.Of2012 Mod.2020 - Diseño sísmico de edificios, ASCE/SEI 7-16 Capítulo 17 - Seismic design requirements for seismically isolated structures, ACI 350.3 - Seismic design of liquid-containing concrete structures (para estanques aislados)</p></section>
 
-<section class="section"><h2>Preguntas comunes</h2><details><summary>¿Qué diferencia un análisis con aislación sísmica de uno tradicional en Alto Hospicio?</summary><p>La diferencia fundamental está en el control de daño. Un edificio convencional disipa energía mediante daño estructural controlado en vigas y muros. Con la aislación, concentramos la deformación en los dispositivos ubicados en la base, manteniendo la superestructura dentro del rango elástico. En Alto Hospicio, esto es crítico porque permite diseñar con un factor de modificación de respuesta R=1, eliminando la incertidumbre de la ductilidad local en una zona de alta sismicidad.</p></details><details><summary>¿Cuánto cuesta implementar un sistema de aislación sísmica de base en Alto Hospicio?</summary><p>Para un proyecto típico en Alto Hospicio, el costo incremental de la aislación sísmica de base se sitúa en el rango de $1.955.000 a $3.537.000 pesos chilenos, dependiendo del número de aisladores, la complejidad del análisis no lineal y el tipo de dispositivo seleccionado. Este valor considera la ingeniería de detalle completa, pero no incluye el suministro de los aisladores ni las pruebas de prototipo requeridas por la NCh2745.</p></details><details><summary>¿Cómo afectan los suelos salinos de la Pampa del Tamarugal a los aisladores?</summary><p>Los suelos con alto contenido de sulfatos y cloruros, típicos de Alto Hospicio, atacan químicamente el hormigón de los pedestales y las placas de acero de los aisladores si no se especifica la protección adecuada. Nuestro protocolo incluye un estudio de agresividad del suelo según NCh170, y en función de los resultados, especificamos cemento resistente a sulfatos (grado ARS), recubrimientos epóxicos en metales y, en casos extremos, sistemas de protección catódica para los anclajes de los dispositivos.</p></details><details><summary>¿Qué normativa chilena regula el diseño de aislación sísmica?</summary><p>El diseño se rige por la NCh2745.Of2013 'Análisis y diseño de edificios con aislación sísmica', que establece los procedimientos de análisis estático equivalente y dinámico no lineal. Esta norma se complementa con la NCh433.Of2012 para la definición de la amenaza sísmica y la clasificación de sitio. Para proyectos con objetivos de desempeño superiores, también aplicamos los lineamientos del estándar ASCE 7-16 Capítulo 17 como referencia internacional.</p></details></section>
+<section class="section"><h2>Preguntas comunes</h2><details><summary>¿Qué diferencia un análisis con aislación sísmica de uno tradicional en Alto Hospicio?</summary><p>La diferencia fundamental está en el control de daño. Un edificio convencional disipa energía mediante daño estructural controlado en vigas y muros. Con la aislación, concentramos la deformación en los dispositivos ubicados en la base, manteniendo la superestructura dentro del rango elástico. En Alto Hospicio, esto es crítico porque permite diseñar con un factor de modificación de respuesta R=1, eliminando la incertidumbre de la ductilidad local en una zona de alta sismicidad.</p></details><details><summary>¿Cuánto cuesta implementar un sistema de aislación sísmica de base en Alto Hospicio?</summary><p>Para un proyecto típico en Alto Hospicio, el costo incremental de la aislación sísmica de base se sitúa en el rango de $1.955.000 a $3.537.000 pesos chilenos, dependiendo del número de aisladores, la complejidad del análisis no lineal y el tipo de dispositivo seleccionado. Este valor considera la ingeniería de detalle completa, pero no incluye el suministro de los aisladores ni las pruebas de prototipo requeridas por la NCh2745.</p></details><details><summary>¿Cómo afectan los suelos salinos de la Pampa del Tamarugal a los aisladores?</summary><p>Los suelos con alto contenido de sulfatos y cloruros, típicos de Alto Hospicio, atacan químicamente el hormigón de los pedestales y las placas de acero de los aisladores si no se especifica la protección adecuada. Nuestro protocolo incluye un estudio de agresividad del suelo según NCh170, y en función de los resultados, especificamos cemento resistente a sulfatos (grado ARS), recubrimientos epóxicos en metales y, en casos extremos, sistemas de protección catódica para los <a href="/anclajes/">anclajes</a> de los dispositivos.</p></details><details><summary>¿Qué normativa chilena regula el diseño de aislación sísmica?</summary><p>El diseño se rige por la NCh2745.Of2013 'Análisis y diseño de edificios con aislación sísmica', que establece los procedimientos de análisis estático equivalente y dinámico no lineal. Esta norma se complementa con la NCh433.Of2012 para la definición de la amenaza sísmica y la clasificación de sitio. Para proyectos con objetivos de desempeño superiores, también aplicamos los lineamientos del estándar ASCE 7-16 Capítulo 17 como referencia internacional.</p></details></section>
 
 
     <section class="block map-block" style="padding:3rem 1.5rem">
@@ -167,7 +218,8 @@ header.hero, .hero { position: relative !important; }
           L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}@2x.png",{
             attribution:"&copy; OpenStreetMap colaboradores &copy; CARTO",maxZoom:19,subdomains:"abcd"
           }).addTo(m);
-          L.circle([-20.27,-70.1009],{radius:5000,color:'#171717',weight:2,fillColor:'#404040',fillOpacity:0.18}).addTo(m).bindPopup("Alto Hospicio");
+          L.marker([-20.27,-70.1009],{icon:L.icon({iconUrl:"/css/images/marker-icon.png",iconRetinaUrl:"/css/images/marker-icon-2x.png",shadowUrl:"/css/images/marker-shadow.png",iconSize:[25,41],iconAnchor:[12,41],popupAnchor:[1,-34],shadowSize:[41,41]})}).addTo(m);
+L.circle([-20.27,-70.1009],{radius:5000,color:'#171717',weight:2,fillColor:'#404040',fillOpacity:0.18}).addTo(m).bindPopup("Alto Hospicio");
         })();
         </script>
         <div style="margin-top:.5rem;font-size:.78rem;color:#888;text-align:center">
